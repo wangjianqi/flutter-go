@@ -501,7 +501,7 @@ class _SelectionToolbarState extends State<_SelectionToolbar> {
     );
     final TextSelectionPoint textEndpoint = new TextSelectionPoint(endpoint, TextDirection.ltr);
     final toolbar = widget.controls
-        .buildToolbar(context, editingRegion,0.0, midpoint, [textEndpoint], widget.delegate);
+        .buildToolbar(context, editingRegion,midpoint, [textEndpoint], widget.delegate);
     return new CompositedTransformFollower(
       link: block.layerLink,
       showWhenUnlinked: false,
