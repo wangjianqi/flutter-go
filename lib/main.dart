@@ -73,6 +73,7 @@ class _MyAppState extends State<MyApp> {
     _reqsMainPageIsOpen();
     _startupJpush();
 
+    ///添加连接通知
     FlutterJPush.addConnectionChangeListener((bool connected) {
       setState(() {
         /// 是否连接，连接了才可以推送
@@ -154,6 +155,7 @@ class _MyAppState extends State<MyApp> {
 
   showWelcomePage() {
     if (_isLoading) {
+      ///加载中
       return Container(
         color: Color(this.themeColor),
         child: Center(
@@ -196,6 +198,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+///极光
 void _startupJpush() async {
   print("初始化jpush");
   await FlutterJPush.startup();
@@ -213,6 +216,7 @@ void main() async {
     Application.widgetTree = WidgetTree.buildWidgetTree(data);
     print("Application.widgetTree>>>> ${Application.widgetTree}");
   });
+  ///数据库
   db = Provider.db;
   runApp(new MyApp());
 }
